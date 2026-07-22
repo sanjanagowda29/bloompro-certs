@@ -37,6 +37,11 @@ yarn-error.log
 testem.log
 /typings
 
+# Firebase
+.firebase/
+serviceAccountKey.json
+seed.js
+
 # System files
 .DS_Store
 Thumbs.db

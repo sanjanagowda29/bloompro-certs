@@ -1,0 +1,38 @@
+<div class="form-container">
+
+  <h1>{{ editingId ? 'Edit' : 'Create' }} Certificate</h1>
+
+  <label>Member ID</label>
+  <input type="text" [(ngModel)]="certificate.memberId" placeholder="Member ID">
+
+  <label>Member Name</label>
+  <input type="text" [(ngModel)]="certificate.memberName" placeholder="Member Name">
+
+  <label>Certification Name</label>
+  <input type="text" [(ngModel)]="certificate.certificationName" placeholder="Certification Name">
+
+  <label>Issuer</label>
+  <input type="text" [(ngModel)]="certificate.issuer" placeholder="Issuer">
+
+  <label>Issue Date</label>
+  <input type="date" [(ngModel)]="certificate.issueDate">
+
+  <label>Expiry Date</label>
+  <input type="date" [(ngModel)]="certificate.expiryDate">
+
+  <label>Document URL (optional)</label>
+  <input type="text" [(ngModel)]="certificate.documentUrl" placeholder="Paste PDF link here">
+
+  <div *ngIf="certificate.documentUrl">
+    <a [href]="certificate.documentUrl" target="_blank">📎 View Document</a>
+  </div>
+
+  <button (click)="saveCertificate()" [disabled]="saving">
+    {{ saving ? 'Saving...' : (editingId ? 'Update Certificate' : 'Create Certificate') }}
+  </button>
+
+  <button class="back-btn" (click)="router.navigate(['/certifications'])">
+    ← Back
+  </button>
+
+</div>

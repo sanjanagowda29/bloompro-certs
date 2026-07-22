@@ -1,0 +1,75 @@
+<div class="container">
+
+<h2>Member Management</h2>
+
+<input placeholder="Member ID" [(ngModel)]="memberId">
+
+<input placeholder="Society ID" [(ngModel)]="societyId">
+
+<input placeholder="Name" [(ngModel)]="name">
+
+<input placeholder="Email" [(ngModel)]="email">
+
+<select [(ngModel)]="role">
+
+<option value="member">Member</option>
+
+<option value="admin">Admin</option>
+
+</select>
+
+<button (click)="saveMember()">
+
+{{editingId ? 'Update' : 'Add'}} Member
+
+</button>
+
+<hr>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Member ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Role</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let member of members">
+
+<td>{{member.memberId}}</td>
+
+<td>{{member.name}}</td>
+
+<td>{{member.email}}</td>
+
+<td>{{member.role}}</td>
+
+<td>
+
+<button (click)="editMember(member)">Edit</button>
+
+<button (click)="deleteMember(member.id)">Delete</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>

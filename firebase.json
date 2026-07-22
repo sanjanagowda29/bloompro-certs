@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/bloompro-certs/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

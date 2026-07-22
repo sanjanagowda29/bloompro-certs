@@ -1,0 +1,170 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>BloomPro</h2>
+
+
+        <a routerLink="/admin">
+            🏠 Dashboard
+        </a>
+
+
+        <a routerLink="/profile">
+            👤 Profile
+        </a>
+
+
+        <a routerLink="/certification-form">
+            📄 Create Certificate
+        </a>
+
+
+        <a routerLink="/certifications">
+            📋 View Certificates
+        </a>
+
+
+        <a routerLink="/members">
+            👥 Members
+        </a>
+
+
+        <a routerLink="/statistics">
+            📊 Statistics
+        </a>
+
+
+        <a (click)="logout()" class="logout">
+            🚪 Logout
+        </a>
+
+
+    </div>
+
+
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+
+        <p>
+            Welcome Administrator 👋
+        </p>
+
+
+
+        <div class="cards">
+
+
+
+            <div class="card">
+
+                <h3>📄</h3>
+
+                <h2>
+                    Create Certificate
+                </h2>
+
+
+                <button routerLink="/certification-form">
+                    Open
+                </button>
+
+
+            </div>
+
+
+
+
+
+            <div class="card">
+
+
+                <h3>📋</h3>
+
+
+                <h2>
+                    View Certificates
+                </h2>
+
+
+                <button routerLink="/certifications">
+
+                    Open
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="card">
+
+
+                <h3>👥</h3>
+
+
+                <h2>
+                    Members
+                </h2>
+
+
+                <button routerLink="/members">
+
+                    Open
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="card">
+
+
+                <h3>📊</h3>
+
+
+                <h2>
+                    Statistics
+                </h2>
+
+
+                <button routerLink="/statistics">
+
+                    Open
+
+                </button>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>

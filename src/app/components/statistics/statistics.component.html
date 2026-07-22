@@ -1,0 +1,48 @@
+<div class="statistics">
+
+  <h1>📊 Statistics Dashboard</h1>
+
+  <div class="cards">
+
+    <div class="card">
+      <h2>👥 Total Members</h2>
+      <h1>{{ totalMembers }}</h1>
+    </div>
+
+    <div class="card">
+      <h2>✅ Certified Members</h2>
+      <h1>{{ certifiedMembers }}</h1>
+    </div>
+
+    <div class="card">
+      <h2>📄 Total Certificates</h2>
+      <h1>{{ totalCertificates }}</h1>
+    </div>
+
+    <div class="card">
+      <h2>🟢 Active</h2>
+      <h1>{{ activeCertificates }}</h1>
+    </div>
+
+    <div class="card">
+      <h2>🔴 Expired</h2>
+      <h1>{{ expiredCertificates }}</h1>
+    </div>
+
+  </div>
+
+  <div class="charts">
+
+    <div>
+      <h3>Certificates by Status</h3>
+      <canvas id="statusChart"></canvas>
+    </div>
+
+    <div>
+      <h3>Certificates by Type</h3>
+      <canvas id="typeChart"></canvas>
+    </div>
+
+  </div>
+
+</div>

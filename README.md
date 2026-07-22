@@ -1,59 +1,57 @@
-# BloomproCerts
+# BloomPro Certs
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Orchid Grower Certification & Training Management System built with Angular + Firebase.
 
-## Development server
+## Live Demo
 
-To start a local development server, run:
+https://bloompro-certs.web.app
+
+## Login Credentials
+
+### Admin
+- Email: `admin@bloompro.com`
+- Password: `Admin@123`
+
+### Member
+- Email: `member@bloompro.com`
+- Password: `Member@123`
+
+## How to Use
+
+### As Admin
+1. Log in with the admin credentials above
+2. You land on the **Admin Dashboard** with quick-access cards
+3. **Create Certificate** — fill in member ID, name, certification name, issuer, dates, and an optional document URL (paste a Google Drive or Dropbox PDF link)
+4. **View Certificates** — see all certifications in a searchable table; use the search box to filter by member, certification type, issuer, or status; click Edit or Delete on any row
+5. **Members** — add, edit, or delete member records (memberId, name, email, role, societyId)
+6. **Statistics** — view summary cards (total members, certified members, active/expired counts) and charts broken down by certification status and type
+7. **Profile** — view and edit your own profile details
+8. **Logout** — click the Logout link in the sidebar
+
+### As Member
+1. Log in with the member credentials above
+2. You land on the **Member Dashboard** showing only your own certifications
+3. View certification name, issue date, expiry date, status, and issuer
+4. Click **Logout** to sign out
+
+## Tech Stack
+
+- Angular 17 (standalone components, strict mode)
+- Firebase Authentication
+- Cloud Firestore
+- TypeScript
+- Chart.js
+
+## Firestore Collections
+
+- `members` — memberId, email, name, role, societyId
+- `certifications` — memberId, memberName, certificationName, issueDate, expiryDate, issuer, status, documentUrl
+
+## Run Locally
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Open http://localhost:4200

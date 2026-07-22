@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h2>Welcome {{member.name}}</h2>
+
+    <p><strong>Member ID:</strong> {{member.memberId}}</p>
+
+    <p><strong>Email:</strong> {{member.email}}</p>
+
+    <hr>
+
+    <h3>My Certifications</h3>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Certification</th>
+                <th>Issue Date</th>
+                <th>Expiry Date</th>
+                <th>Status</th>
+                <th>Issuer</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let cert of certificates">
+
+                <td>{{cert.certificationName}}</td>
+                <td>{{cert.issueDate}}</td>
+                <td>{{cert.expiryDate}}</td>
+                <td>{{cert.status}}</td>
+                <td>{{cert.issuer}}</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+<button class="logout-btn" (click)="logout()">
+        Logout
+    </button>
+</div>
