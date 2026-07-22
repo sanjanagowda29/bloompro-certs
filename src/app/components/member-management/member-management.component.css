@@ -1,18 +1,9 @@
 .page-wrapper {
-  margin-left: 240px;
   padding: 40px;
   min-height: 100vh;
   background: var(--bg);
-}
-
-.page-header {
-  margin-bottom: 28px;
-}
-
-.page-header h1 {
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -.4px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .form-card {

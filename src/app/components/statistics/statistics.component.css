@@ -1,8 +1,9 @@
 .page-wrapper {
-  margin-left: 240px;
   padding: 40px;
   min-height: 100vh;
   background: var(--bg);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .page-header {
