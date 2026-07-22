@@ -1,36 +1,90 @@
-.container{
-
-    width:90%;
-    margin:auto;
-    margin-top:30px;
-
+.member-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 40px;
 }
 
-table{
-
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-
+.member-header {
+  background: linear-gradient(135deg, #047857, #059669);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(5,150,105,.3);
 }
 
-th,td{
-
-    border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
-
+.member-info h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
-th{
-
-    background:#1976d2;
-    color:white;
-
+.member-info p {
+  opacity: .85;
+  font-size: 14px;
 }
 
-h2{
-
-    color:#1976d2;
-
+.member-meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
 }
+
+.meta-item {
+  background: rgba(255,255,255,.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,.15);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,.25);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.table-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.active   { background: #d1fae5; color: #065f46; }
+.status-badge.expired  { background: #fee2e2; color: #991b1b; }
+.status-badge.warning  { background: #fef3c7; color: #92400e; }
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state span { font-size: 48px; display: block; margin-bottom: 12px; }

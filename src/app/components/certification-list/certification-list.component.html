@@ -1,239 +1,57 @@
-<div class="container">
+<div class="page-wrapper">
 
-
-    <div class="header">
-
-
-        <h1>
-            📋 Certification List
-        </h1>
-
-
-
-        <input
-
-        type="text"
-
-        placeholder="Search certificate..."
-
-        [(ngModel)]="searchText"
-
-        (input)="filterCertificates()"
-
-        >
-
+  <div class="page-header">
+    <h1>📋 Certificates</h1>
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" placeholder="Search certificates..." [(ngModel)]="searchText" (input)="filterCertificates()">
     </div>
-
-
-
-
-
-    <table>
-
-
-        <thead>
-
-
-            <tr>
-
-
-                <th>
-                    Member ID
-                </th>
-
-
-                <th>
-                    Member Name
-                </th>
-
-
-                <th>
-                    Certification
-                </th>
-
-
-                <th>
-                    Issuer
-                </th>
-
-
-                <th>
-                    Issue Date
-                </th>
-
-
-                <th>
-                    Expiry Date
-                </th>
-
-
-                <th>
-                    Status
-                </th>
-
-
-                <th>
-                    Actions
-                </th>
-
-
-            </tr>
-
-
-        </thead>
-
-
-
-
-
-        <tbody>
-
-
-
-            <tr *ngFor="let cert of filteredCertifications">
-
-
-
-                <td>
-                    {{cert.memberId}}
-                </td>
-
-
-
-
-                <td>
-                    {{cert.memberName}}
-                </td>
-
-
-
-
-                <td>
-                    {{cert.certificationName}}
-                </td>
-
-
-
-
-                <td>
-                    {{cert.issuer}}
-                </td>
-
-
-
-
-                <td>
-                    {{cert.issueDate}}
-                </td>
-
-
-
-
-                <td>
-                    {{cert.expiryDate || '-'}}
-                </td>
-
-
-
-
-
-                <td>
-
-
-                    <span
-
-                    class="status"
-
-                    [ngClass]="{
-
-                    'active':cert.status==='Active',
-
-                    'expired':cert.status==='Expired',
-
-                    'warning':cert.status==='Expiring Soon',
-
-                    'none':cert.status==='No Expiry Date'
-
-                    }"
-
-                    >
-
-                    {{cert.status}}
-
-                    </span>
-
-
-                </td>
-
-
-
-
-
-
-                <td>
-
-
-                    <button
-
-                    class="edit"
-
-                    (click)="editCertification(cert)"
-
-                    >
-
-                    ✏ Edit
-
-                    </button>
-
-
-
-
-
-                    <button
-
-                    class="delete"
-
-                    (click)="deleteCertification(cert.id)"
-
-                    >
-
-                    🗑 Delete
-
-                    </button>
-
-
-
-                </td>
-
-
-
-            </tr>
-
-
-
-        </tbody>
-
-
-
+    <button class="add-btn" routerLink="/certification-form">+ New Certificate</button>
+  </div>
+
+  <div class="table-card">
+    <table *ngIf="filteredCertifications.length > 0">
+      <thead>
+        <tr>
+          <th>Member ID</th>
+          <th>Member Name</th>
+          <th>Certification</th>
+          <th>Issuer</th>
+          <th>Issue Date</th>
+          <th>Expiry Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cert of filteredCertifications">
+          <td>{{ cert.memberId }}</td>
+          <td>{{ cert.memberName }}</td>
+          <td>{{ cert.certificationName }}</td>
+          <td>{{ cert.issuer }}</td>
+          <td>{{ cert.issueDate }}</td>
+          <td>{{ cert.expiryDate || '—' }}</td>
+          <td>
+            <span class="status-badge"
+              [class.active]="cert.status === 'Active'"
+              [class.expired]="cert.status === 'Expired'"
+              [class.warning]="cert.status === 'Expiring Soon'"
+              [class.none]="cert.status === 'No Expiry Date'">
+              {{ cert.status }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-edit" (click)="editCertification(cert)">✏ Edit</button>
+            <button class="btn-delete" (click)="deleteCertification(cert.id)">🗑 Delete</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
-
-
-
-
-    <div
-
-    class="empty"
-
-    *ngIf="filteredCertifications.length===0"
-
-    >
-
-        No certificates found.
-
-
+    <div class="empty-state" *ngIf="filteredCertifications.length === 0">
+      <span>📭</span>
+      No certificates found.
     </div>
-
-
+  </div>
 
 </div>

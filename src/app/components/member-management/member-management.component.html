@@ -1,75 +1,65 @@
-<div class="container">
+<div class="page-wrapper">
 
-<h2>Member Management</h2>
+  <div class="page-header">
+    <h1>👥 Member Management</h1>
+  </div>
 
-<input placeholder="Member ID" [(ngModel)]="memberId">
+  <div class="form-card">
+    <h3>{{ editingId ? 'Edit Member' : 'Add New Member' }}</h3>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Member ID</label>
+        <input placeholder="e.g. M001" [(ngModel)]="memberId">
+      </div>
+      <div class="form-group">
+        <label>Society ID</label>
+        <input placeholder="e.g. S001" [(ngModel)]="societyId">
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input placeholder="Full name" [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input placeholder="email@example.com" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label>Role</label>
+        <select [(ngModel)]="role">
+          <option value="member">Member</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-save" (click)="saveMember()">
+      {{ editingId ? '💾 Update Member' : '+ Add Member' }}
+    </button>
+  </div>
 
-<input placeholder="Society ID" [(ngModel)]="societyId">
-
-<input placeholder="Name" [(ngModel)]="name">
-
-<input placeholder="Email" [(ngModel)]="email">
-
-<select [(ngModel)]="role">
-
-<option value="member">Member</option>
-
-<option value="admin">Admin</option>
-
-</select>
-
-<button (click)="saveMember()">
-
-{{editingId ? 'Update' : 'Add'}} Member
-
-</button>
-
-<hr>
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Member ID</th>
-
-<th>Name</th>
-
-<th>Email</th>
-
-<th>Role</th>
-
-<th>Action</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr *ngFor="let member of members">
-
-<td>{{member.memberId}}</td>
-
-<td>{{member.name}}</td>
-
-<td>{{member.email}}</td>
-
-<td>{{member.role}}</td>
-
-<td>
-
-<button (click)="editMember(member)">Edit</button>
-
-<button (click)="deleteMember(member.id)">Delete</button>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Member ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members">
+          <td>{{ member.memberId }}</td>
+          <td>{{ member.name }}</td>
+          <td>{{ member.email }}</td>
+          <td>{{ member.role }}</td>
+          <td>
+            <button class="btn-edit" (click)="editMember(member)">✏ Edit</button>
+            <button class="btn-delete" (click)="deleteMember(member.id)">🗑 Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>

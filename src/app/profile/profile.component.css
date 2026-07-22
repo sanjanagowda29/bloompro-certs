@@ -1,54 +1,89 @@
-.profile-container{
-
-width:400px;
-margin:40px auto;
-padding:25px;
-background:white;
-border-radius:15px;
-box-shadow:0 5px 15px #ccc;
-
+.page-wrapper {
+  margin-left: 240px;
+  padding: 40px;
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-
-h2{
-
-text-align:center;
-
+.profile-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
 }
 
-
-
-label{
-
-display:block;
-margin-top:15px;
-font-weight:bold;
-
+.profile-banner {
+  background: linear-gradient(135deg, #047857, #059669);
+  padding: 32px;
+  text-align: center;
+  color: white;
 }
 
-
-
-input{
-
-width:100%;
-padding:10px;
-margin-top:5px;
-
-border-radius:8px;
-border:1px solid #ccc;
-
+.avatar {
+  width: 72px;
+  height: 72px;
+  background: rgba(255,255,255,.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 12px;
+  border: 3px solid rgba(255,255,255,.4);
 }
 
+.profile-banner h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
 
+.profile-banner p {
+  opacity: .8;
+  font-size: 13px;
+  margin-top: 4px;
+}
 
-button{
+.profile-body {
+  padding: 28px;
+}
 
-margin-top:20px;
-padding:10px 25px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
+.form-group {
+  margin-bottom: 18px;
+}
 
+.btn-edit {
+  width: 100%;
+  padding: 12px;
+  background: #f0fdf4;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.btn-edit:hover { background: var(--primary-light); }
+
+.btn-save {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(5,150,105,.3);
+  margin-top: 8px;
+}
+
+.btn-save:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(5,150,105,.4);
 }

@@ -1,170 +1,64 @@
 <div class="dashboard">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
+  <!-- Sidebar -->
+  <div class="sidebar">
 
-        <h2>BloomPro</h2>
+    <div class="sidebar-logo">
+      <h2>🌸 BloomPro</h2>
+      <span>Admin Panel</span>
+    </div>
 
+    <nav class="sidebar-nav">
+      <a routerLink="/admin">🏠 Dashboard</a>
+      <a routerLink="/certification-form">📄 Create Certificate</a>
+      <a routerLink="/certifications">📋 Certificates</a>
+      <a routerLink="/members">👥 Members</a>
+      <a routerLink="/statistics">📊 Statistics</a>
+      <a routerLink="/profile">👤 Profile</a>
+    </nav>
 
-        <a routerLink="/admin">
-            🏠 Dashboard
-        </a>
+    <div class="sidebar-footer">
+      <button class="logout-btn" (click)="logout()">🚪 Logout</button>
+    </div>
 
+  </div>
 
-        <a routerLink="/profile">
-            👤 Profile
-        </a>
+  <!-- Main -->
+  <div class="main">
 
+    <div class="page-header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome back, Administrator 👋</p>
+    </div>
 
-        <a routerLink="/certification-form">
-            📄 Create Certificate
-        </a>
+    <div class="cards">
 
+      <div class="card" routerLink="/certification-form">
+        <span class="card-icon">📄</span>
+        <h2>Create Certificate</h2>
+        <button class="card-btn">Open</button>
+      </div>
 
-        <a routerLink="/certifications">
-            📋 View Certificates
-        </a>
+      <div class="card" routerLink="/certifications">
+        <span class="card-icon">📋</span>
+        <h2>View Certificates</h2>
+        <button class="card-btn">Open</button>
+      </div>
 
+      <div class="card" routerLink="/members">
+        <span class="card-icon">👥</span>
+        <h2>Members</h2>
+        <button class="card-btn">Open</button>
+      </div>
 
-        <a routerLink="/members">
-            👥 Members
-        </a>
-
-
-        <a routerLink="/statistics">
-            📊 Statistics
-        </a>
-
-
-        <a (click)="logout()" class="logout">
-            🚪 Logout
-        </a>
-
+      <div class="card" routerLink="/statistics">
+        <span class="card-icon">📊</span>
+        <h2>Statistics</h2>
+        <button class="card-btn">Open</button>
+      </div>
 
     </div>
 
-
-
-    <!-- Main Content -->
-
-    <div class="main">
-
-
-        <h1>
-            Admin Dashboard
-        </h1>
-
-
-        <p>
-            Welcome Administrator 👋
-        </p>
-
-
-
-        <div class="cards">
-
-
-
-            <div class="card">
-
-                <h3>📄</h3>
-
-                <h2>
-                    Create Certificate
-                </h2>
-
-
-                <button routerLink="/certification-form">
-                    Open
-                </button>
-
-
-            </div>
-
-
-
-
-
-            <div class="card">
-
-
-                <h3>📋</h3>
-
-
-                <h2>
-                    View Certificates
-                </h2>
-
-
-                <button routerLink="/certifications">
-
-                    Open
-
-                </button>
-
-
-            </div>
-
-
-
-
-
-
-
-            <div class="card">
-
-
-                <h3>👥</h3>
-
-
-                <h2>
-                    Members
-                </h2>
-
-
-                <button routerLink="/members">
-
-                    Open
-
-                </button>
-
-
-            </div>
-
-
-
-
-
-
-
-
-            <div class="card">
-
-
-                <h3>📊</h3>
-
-
-                <h2>
-                    Statistics
-                </h2>
-
-
-                <button routerLink="/statistics">
-
-                    Open
-
-                </button>
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-    </div>
-
+  </div>
 
 </div>

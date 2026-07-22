@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { CertificationService } from '../../services/certification.service';
 
@@ -14,7 +14,8 @@ import { CertificationService } from '../../services/certification.service';
 
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
 
   templateUrl: './certification-list.component.html',

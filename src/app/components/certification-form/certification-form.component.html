@@ -1,38 +1,56 @@
-<div class="form-container">
+<div class="page-wrapper">
+  <div class="form-card">
 
-  <h1>{{ editingId ? 'Edit' : 'Create' }} Certificate</h1>
+    <h1>{{ editingId ? '✏️ Edit Certificate' : '📄 New Certificate' }}</h1>
 
-  <label>Member ID</label>
-  <input type="text" [(ngModel)]="certificate.memberId" placeholder="Member ID">
+    <div class="form-grid">
 
-  <label>Member Name</label>
-  <input type="text" [(ngModel)]="certificate.memberName" placeholder="Member Name">
+      <div class="form-group">
+        <label>Member ID</label>
+        <input type="text" [(ngModel)]="certificate.memberId" placeholder="e.g. M001">
+      </div>
 
-  <label>Certification Name</label>
-  <input type="text" [(ngModel)]="certificate.certificationName" placeholder="Certification Name">
+      <div class="form-group">
+        <label>Member Name</label>
+        <input type="text" [(ngModel)]="certificate.memberName" placeholder="Full name">
+      </div>
 
-  <label>Issuer</label>
-  <input type="text" [(ngModel)]="certificate.issuer" placeholder="Issuer">
+      <div class="form-group full">
+        <label>Certification Name</label>
+        <input type="text" [(ngModel)]="certificate.certificationName" placeholder="e.g. Orchid Judging Level 1">
+      </div>
 
-  <label>Issue Date</label>
-  <input type="date" [(ngModel)]="certificate.issueDate">
+      <div class="form-group full">
+        <label>Issuer</label>
+        <input type="text" [(ngModel)]="certificate.issuer" placeholder="e.g. American Orchid Society">
+      </div>
 
-  <label>Expiry Date</label>
-  <input type="date" [(ngModel)]="certificate.expiryDate">
+      <div class="form-group">
+        <label>Issue Date</label>
+        <input type="date" [(ngModel)]="certificate.issueDate">
+      </div>
 
-  <label>Document URL (optional)</label>
-  <input type="text" [(ngModel)]="certificate.documentUrl" placeholder="Paste PDF link here">
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="date" [(ngModel)]="certificate.expiryDate">
+      </div>
 
-  <div *ngIf="certificate.documentUrl">
-    <a [href]="certificate.documentUrl" target="_blank">📎 View Document</a>
+      <div class="form-group full">
+        <label>Document URL (optional)</label>
+        <input type="text" [(ngModel)]="certificate.documentUrl" placeholder="Paste Google Drive or Dropbox PDF link">
+        <a *ngIf="certificate.documentUrl" class="doc-link" [href]="certificate.documentUrl" target="_blank">
+          📎 View existing document
+        </a>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-back" (click)="router.navigate(['/certifications'])">← Back</button>
+      <button class="btn-save" (click)="saveCertificate()" [disabled]="saving">
+        {{ saving ? 'Saving...' : (editingId ? 'Update Certificate' : 'Create Certificate') }}
+      </button>
+    </div>
+
   </div>
-
-  <button (click)="saveCertificate()" [disabled]="saving">
-    {{ saving ? 'Saving...' : (editingId ? 'Update Certificate' : 'Create Certificate') }}
-  </button>
-
-  <button class="back-btn" (click)="router.navigate(['/certifications'])">
-    ← Back
-  </button>
-
 </div>

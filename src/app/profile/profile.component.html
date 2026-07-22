@@ -1,68 +1,38 @@
-<div class="profile-container">
+<div class="page-wrapper">
+  <div class="profile-card">
 
+    <div class="profile-banner">
+      <div class="avatar">👤</div>
+      <h2>{{ profile?.name || 'My Profile' }}</h2>
+      <p>{{ profile?.role | titlecase }}</p>
+    </div>
 
-<h2>
-My Profile
-</h2>
+    <div class="profile-body" *ngIf="profile">
 
+      <div class="form-group">
+        <label>Full Name</label>
+        <input [(ngModel)]="profile.name" [disabled]="!editMode">
+      </div>
 
+      <div class="form-group">
+        <label>Email</label>
+        <input [(ngModel)]="profile.email" disabled>
+      </div>
 
-<div *ngIf="profile">
+      <div class="form-group">
+        <label>Phone</label>
+        <input [(ngModel)]="profile.phone" [disabled]="!editMode" placeholder="Phone number">
+      </div>
 
+      <div class="form-group">
+        <label>Role</label>
+        <input [(ngModel)]="profile.role" disabled>
+      </div>
 
-<label>Name</label>
+      <button class="btn-edit" *ngIf="!editMode" (click)="enableEdit()">✏️ Edit Profile</button>
+      <button class="btn-save" *ngIf="editMode" (click)="saveProfile()">💾 Save Changes</button>
 
-<input 
-[(ngModel)]="profile.name"
-[disabled]="!editMode">
+    </div>
 
-
-
-<label>Email</label>
-
-<input 
-[(ngModel)]="profile.email"
-disabled>
-
-
-
-<label>Phone</label>
-
-<input 
-[(ngModel)]="profile.phone"
-[disabled]="!editMode">
-
-
-
-<label>Role</label>
-
-<input 
-[(ngModel)]="profile.role"
-disabled>
-
-
-
-
-<button 
-*ngIf="!editMode"
-(click)="enableEdit()">
-
-Edit Profile
-
-</button>
-
-
-
-<button 
-*ngIf="editMode"
-(click)="saveProfile()">
-
-Save
-
-</button>
-
-
-</div>
-
-
+  </div>
 </div>

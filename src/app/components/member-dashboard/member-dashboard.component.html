@@ -1,47 +1,52 @@
-<div class="container">
+<div class="member-page">
 
-    <h2>Welcome {{member.name}}</h2>
+  <div class="member-header">
+    <div class="member-info">
+      <h2>👋 Welcome, {{ member.name }}</h2>
+      <p>Your personal certification dashboard</p>
+      <div class="member-meta">
+        <span class="meta-item">🪪 {{ member.memberId }}</span>
+        <span class="meta-item">✉️ {{ member.email }}</span>
+      </div>
+    </div>
+    <button class="logout-btn" (click)="logout()">🚪 Logout</button>
+  </div>
 
-    <p><strong>Member ID:</strong> {{member.memberId}}</p>
+  <div class="section-title">My Certifications</div>
 
-    <p><strong>Email:</strong> {{member.email}}</p>
-
-    <hr>
-
-    <h3>My Certifications</h3>
-
-    <table>
-
-        <thead>
-
-            <tr>
-
-                <th>Certification</th>
-                <th>Issue Date</th>
-                <th>Expiry Date</th>
-                <th>Status</th>
-                <th>Issuer</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            <tr *ngFor="let cert of certificates">
-
-                <td>{{cert.certificationName}}</td>
-                <td>{{cert.issueDate}}</td>
-                <td>{{cert.expiryDate}}</td>
-                <td>{{cert.status}}</td>
-                <td>{{cert.issuer}}</td>
-
-            </tr>
-
-        </tbody>
-
+  <div class="table-card">
+    <table *ngIf="certificates.length > 0">
+      <thead>
+        <tr>
+          <th>Certification</th>
+          <th>Issuer</th>
+          <th>Issue Date</th>
+          <th>Expiry Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cert of certificates">
+          <td>{{ cert.certificationName }}</td>
+          <td>{{ cert.issuer }}</td>
+          <td>{{ cert.issueDate }}</td>
+          <td>{{ cert.expiryDate || '—' }}</td>
+          <td>
+            <span class="status-badge"
+              [class.active]="cert.status === 'Active'"
+              [class.expired]="cert.status === 'Expired'"
+              [class.warning]="cert.status === 'Expiring Soon'">
+              {{ cert.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
     </table>
-<button class="logout-btn" (click)="logout()">
-        Logout
-    </button>
+
+    <div class="empty-state" *ngIf="certificates.length === 0">
+      <span>📭</span>
+      No certifications found.
+    </div>
+  </div>
+
 </div>

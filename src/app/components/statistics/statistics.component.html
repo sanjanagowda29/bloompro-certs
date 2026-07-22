@@ -1,48 +1,46 @@
-<div class="statistics">
+<div class="page-wrapper">
 
-  <h1>📊 Statistics Dashboard</h1>
-
-  <div class="cards">
-
-    <div class="card">
-      <h2>👥 Total Members</h2>
-      <h1>{{ totalMembers }}</h1>
-    </div>
-
-    <div class="card">
-      <h2>✅ Certified Members</h2>
-      <h1>{{ certifiedMembers }}</h1>
-    </div>
-
-    <div class="card">
-      <h2>📄 Total Certificates</h2>
-      <h1>{{ totalCertificates }}</h1>
-    </div>
-
-    <div class="card">
-      <h2>🟢 Active</h2>
-      <h1>{{ activeCertificates }}</h1>
-    </div>
-
-    <div class="card">
-      <h2>🔴 Expired</h2>
-      <h1>{{ expiredCertificates }}</h1>
-    </div>
-
+  <div class="page-header">
+    <h1>📊 Statistics</h1>
   </div>
 
-  <div class="charts">
+  <div class="stat-cards">
+    <div class="stat-card">
+      <span class="stat-icon">👥</span>
+      <div class="stat-value">{{ totalMembers }}</div>
+      <div class="stat-label">Total Members</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">✅</span>
+      <div class="stat-value">{{ certifiedMembers }}</div>
+      <div class="stat-label">Certified Members</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">📄</span>
+      <div class="stat-value">{{ totalCertificates }}</div>
+      <div class="stat-label">Total Certificates</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🟢</span>
+      <div class="stat-value">{{ activeCertificates }}</div>
+      <div class="stat-label">Active</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🔴</span>
+      <div class="stat-value">{{ expiredCertificates }}</div>
+      <div class="stat-label">Expired</div>
+    </div>
+  </div>
 
-    <div>
+  <div class="charts-grid">
+    <div class="chart-card">
       <h3>Certificates by Status</h3>
       <canvas id="statusChart"></canvas>
     </div>
-
-    <div>
+    <div class="chart-card">
       <h3>Certificates by Type</h3>
       <canvas id="typeChart"></canvas>
     </div>
-
   </div>
 
 </div>
